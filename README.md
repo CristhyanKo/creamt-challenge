@@ -74,7 +74,7 @@ Este projeto envolve a criação de uma API RESTful desenvolvida com .NET Core, 
 	
  - **Gestão de Documentos**
 	- Funcionalidades: Listar, Criar, Excluir
-	- Observação: O documento em si pode ser um arquivo PDF, assim como o anexado como exemplo neste repositório.
+	- Observação: O documento em si pode ser um arquivo PDF, assim como o anexado como exemplo neste repositório ([DOCUMENTO EXEMPLO](https://github.com/CristhyanKo/creatmt-challenge/blob/main/DOCUMENTO%20EXEMPLO.pdf)).
 	
  - **Gestão de Serviços**
 	- Funcionalidades: Ativar/Desativar, Listar, Criar, Editar, Excluir
