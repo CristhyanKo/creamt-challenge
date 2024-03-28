@@ -68,7 +68,7 @@ Este projeto envolve a criação de uma API RESTful desenvolvida com .NET Core, 
 	- Todo usuário deve ter em seu cadastro: Nome, E-mail, Telefone, CPF ou CNPJ, Senha
 	
  - **Gestão de Clientes**
-  - Funcionalidades: Ativar/Desativar, Listar, Criar, Editar, Excluir
+  	- Funcionalidades: Ativar/Desativar, Listar, Criar, Editar, Excluir
 	- No cadastro do cliente deve ter o Id do usuário que o cadastrou
 	- Funcionalidade para informar o pagamento da anuidade de um cliente	
 	
@@ -83,7 +83,7 @@ Este projeto envolve a criação de uma API RESTful desenvolvida com .NET Core, 
  - **Gestão de Solicitações**
 	- Listar, Criar
 	- Toda solicitação deve ter em seu cadastro: Id do Cliente, Id do Serviço, Campo informando se a solicitação já foi paga ou não
-	- Apenas clientes com a anuidade paga podem solicitar novos serviços
+	- Apenas clientes com a anuidade paga podem efetuar novas solicitacoes
 	- Funcionalidade para informar o pagamento do serviço
 	- Listagem de Serviços Solicitados por um cliente
 		- Exibir os serviços solicitados pelo cliente, exibindo os dados do serviço, se a solicitação feita foi paga ou não e se o cliente já fez o download do documento atrelado ao serviço solicitados
