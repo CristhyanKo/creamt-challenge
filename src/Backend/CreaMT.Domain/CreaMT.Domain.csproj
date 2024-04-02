@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CreaMT.Domain\CreaMT.Domain.csproj" />
-  </ItemGroup>
-
 </Project>
