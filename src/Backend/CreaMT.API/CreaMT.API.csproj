@@ -19,6 +19,7 @@
     <ProjectReference Include="..\..\Shared\CreaMT.Communication\CreaMT.Communication.csproj" />
     <ProjectReference Include="..\..\Shared\CreaMT.Exceptions\CreaMT.Exceptions.csproj" />
     <ProjectReference Include="..\CreaMT.Application\CreaMT.Application.csproj" />
+    <ProjectReference Include="..\CreaMT.infrastructure\CreaMT.infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,10 +10,11 @@ public class UsuarioController : ControllerBase
 {
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisteredUsuariosJson),StatusCodes.Status201Created)]
-    public IActionResult Register(RequestRegisterUsuarioJson request)
+    public async Task<IActionResult> Register(
+        [FromServices] IRegisterUsuarioUseCase useCase,
+        [FromBody] RequestRegisterUsuarioJson request)
     {
-        var useCase = new RegisterUsuarioUseCase();
-        var resul = useCase.Execute(request);
+        var resul = await useCase.Execute(request);
         return Created(string.Empty, resul);
     }
 }
