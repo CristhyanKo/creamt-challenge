@@ -22,14 +22,14 @@ namespace CreaMT.Exceptions {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ResourceMessagesExceptions {
+    public class ResourceMessagesException {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResourceMessagesExceptions() {
+        internal ResourceMessagesException() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace CreaMT.Exceptions {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CreaMT.Exceptions.ResourceMessagesExceptions", typeof(ResourceMessagesExceptions).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CreaMT.Exceptions.ResourceMessagesException", typeof(ResourceMessagesException).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -139,7 +139,29 @@ namespace CreaMT.Exceptions {
         {
             get
             {
-                return ResourceManager.GetString("TELEPHONE_INVALID", resourceCulture);
+                return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
+            }
+        }
+      
+        /// <summary>
+        ///   Looks up a localized string email já cadastrado..
+        /// </summary>
+        public static string EMAIL_ALREADY_REGISTERED
+        {
+            get
+            {
+                return ResourceManager.GetString("EMAIL_ALREADY_REGISTERED", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string CPF ou CNPJ já cadastrado.
+        /// </summary>
+        public static string CPF_CNPJ_ALREADY_REGISTERED
+        {
+            get
+            {
+                return ResourceManager.GetString("CPF_CNPJ_ALREADY_REGISTERED", resourceCulture);
             }
         }
     }

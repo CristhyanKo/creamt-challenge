@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CPF_CNPJ_ALREADY_REGISTERED" xml:space="preserve">
+    <value>CPF ou CNPJ já cadastrado.</value>
+  </data>
   <data name="CPF_CNPJ_EMPTY" xml:space="preserve">
     <value>O CPF ou CNPJ não pode estar vazio</value>
   </data>
   <data name="CPF_CNPJ_INVALID" xml:space="preserve">
     <value>O CPF ou CNPJ deve conter apenas números, com 11 caracteres para CPF e 14 caracteres para CNPJ.</value>
+  </data>
+  <data name="EMAIL_ALREADY_REGISTERED" xml:space="preserve">
+    <value>email já cadastrado.</value>
   </data>
   <data name="EMAIL_EMPTY" xml:space="preserve">
     <value>O email não pode estar vazio</value>
