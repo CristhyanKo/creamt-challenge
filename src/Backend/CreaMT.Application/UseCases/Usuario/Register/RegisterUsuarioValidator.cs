@@ -7,16 +7,16 @@ public class RegisterUsuarioValidator : AbstractValidator<RequestRegisterUsuario
 {
     public RegisterUsuarioValidator()
     {
-        RuleFor(x => x.Nome).NotEmpty().WithMessage(ResourceMessagesExceptions.NOME_EMPTY);
-        RuleFor(x => x.Email).NotEmpty().WithMessage(ResourceMessagesExceptions.EMAIL_EMPTY);
-        RuleFor(x => x.Email).EmailAddress().WithMessage(ResourceMessagesExceptions.EMAIL_INVALID);
+        RuleFor(x => x.Nome).NotEmpty().WithMessage(ResourceMessagesException.NOME_EMPTY);
+        RuleFor(x => x.Email).NotEmpty().WithMessage(ResourceMessagesException.EMAIL_EMPTY);
+        RuleFor(x => x.Email).EmailAddress().WithMessage(ResourceMessagesException.EMAIL_INVALID);
         RuleFor(x => x.Telefone)
-        .NotEmpty().WithMessage(ResourceMessagesExceptions.TELEPHONE_EMPTY)
-        .Matches(@"^\(\d{2}\) \d{4,5}-\d{4}$").WithMessage(ResourceMessagesExceptions.TELEPHONE_INVALID);
+        .NotEmpty().WithMessage(ResourceMessagesException.TELEPHONE_EMPTY)
+        .Matches(@"^\(\d{2}\) \d{4,5}-\d{4}$").WithMessage(ResourceMessagesException.TELEPHONE_INVALID);
         RuleFor(x => x.CpfCnpj)
-            .NotEmpty().WithMessage(ResourceMessagesExceptions.CPF_CNPJ_EMPTY)
-            .Must(CpfOuCnpjIsValid).WithMessage(ResourceMessagesExceptions.CPF_CNPJ_INVALID);
-        RuleFor(x => x.Senha.Length).GreaterThanOrEqualTo(6).WithMessage(ResourceMessagesExceptions.PASSWORD_INVALID);
+            .NotEmpty().WithMessage(ResourceMessagesException.CPF_CNPJ_EMPTY)
+            .Must(CpfOuCnpjIsValid).WithMessage(ResourceMessagesException.CPF_CNPJ_INVALID);
+        RuleFor(x => x.Senha.Length).GreaterThanOrEqualTo(6).WithMessage(ResourceMessagesException.PASSWORD_INVALID);
 
     }
 
