@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Shared\CreaMT.Communication\CreaMT.Communication.csproj" />
     <ProjectReference Include="..\..\Shared\CreaMT.Exceptions\CreaMT.Exceptions.csproj" />
     <ProjectReference Include="..\CreaMT.Application\CreaMT.Application.csproj" />
