@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using CleaMT.CommonTestUtilities.Entities;
+using CleaMT.CommonTestUtilities.Tokens;
 
 namespace CreaMT.UseCases.Test.Login.DoLogin;
 public class DoLoginUseCaseTest
@@ -31,7 +32,9 @@ public class DoLoginUseCaseTest
         });
 
         result.Should().NotBeNull();
+        result.Tokens.Should().NotBeNull();
         result.Nome.Should().NotBeNullOrWhiteSpace().And.Be(usuario.Nome);
+        result.Tokens.AccessToken.Should().NotBeNullOrEmpty();
     }
 
     [Fact]
@@ -49,12 +52,12 @@ public class DoLoginUseCaseTest
     {
         var passwordEncripter = PasswordEncripterBuilder.Build();
         var UsuarioReadOnlyRepositoryBuilder = new UsuarioReadOnlyRepositoryBuilder();
-
+        var accessTokenGenerator = JwtTokenGeneratorBuilder.Build();
         if(usuario is not null)
         {
             UsuarioReadOnlyRepositoryBuilder.GetByEmailAndPassword(usuario);
         }
 
-        return new DoLoginUseCase(UsuarioReadOnlyRepositoryBuilder.Build(), passwordEncripter);
+        return new DoLoginUseCase(UsuarioReadOnlyRepositoryBuilder.Build(), passwordEncripter, accessTokenGenerator);
     }
 }

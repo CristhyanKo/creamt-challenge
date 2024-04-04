@@ -2,6 +2,7 @@
 using CleaMT.CommonTestUtilities.Mapper;
 using CleaMT.CommonTestUtilities.Repositories;
 using CleaMT.CommonTestUtilities.Request;
+using CleaMT.CommonTestUtilities.Tokens;
 using CreaMT.Application.UseCases.Usuario.Register;
 using CreaMT.Domain.Extensions;
 using CreaMT.Exceptions;
@@ -20,7 +21,9 @@ public class RegisterUsuarioUseCaseTest
         var useCase = CreateUseCase();
         var result = await useCase.Execute(request);
         result.Should().NotBeNull();
+        result.Tokens.Should().NotBeNull();
         result.Nome.Should().Be(request.Nome);
+        result.Tokens.AccessToken.Should().NotBeNullOrEmpty();
     }
 
     [Fact]
@@ -65,6 +68,7 @@ public class RegisterUsuarioUseCaseTest
         var writeOnlyRepository = UsuarioWriteOnlyRepositoryBuilder.Build();
         var unitOfWork = UnitOfWorkBuilder.Build();
         var readOnlyRepositoryBuilder = new UsuarioReadOnlyRepositoryBuilder();
+        var accessTokenGenerator = JwtTokenGeneratorBuilder.Build();
 
         if (valor.NotEmpty() && validationType == TypesOfUsuarioValidations.RepositoryDataEmail)
             readOnlyRepositoryBuilder.ExistActiveUsuarioWithEmail(valor!);
@@ -72,6 +76,6 @@ public class RegisterUsuarioUseCaseTest
         else if (valor.NotEmpty() && validationType == TypesOfUsuarioValidations.RepositoryDataCpfCnpj)
             readOnlyRepositoryBuilder.ExistActiveUsuarioWithCpfCnpj(valor!);
 
-        return  new RegisterUsuarioUseCase(writeOnlyRepository, readOnlyRepositoryBuilder.Build(), unitOfWork, mapper, passwordEncripter);
+        return  new RegisterUsuarioUseCase(writeOnlyRepository, readOnlyRepositoryBuilder.Build(), unitOfWork, mapper, passwordEncripter, accessTokenGenerator);
     }
 }
