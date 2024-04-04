@@ -1,4 +1,5 @@
-﻿using CreaMT.Domain.Repositories.Usuario;
+﻿using CreaMT.Domain.Entities;
+using CreaMT.Domain.Repositories.Usuario;
 using Moq;
 
 namespace CleaMT.CommonTestUtilities.Repositories;
@@ -19,5 +20,11 @@ public class UsuarioReadOnlyRepositoryBuilder
     public void ExistActiveUsuarioWithCpfCnpj(string CpfCnpj)
     {
         _repository.Setup(repository => repository.ExistActiveUsuarioWithCpfCnpj(CpfCnpj)).ReturnsAsync(true);
+    }
+
+
+    public void GetByEmailAndPassword(Usuario usuario)
+    {
+        _repository.Setup(repository => repository.GetByEmailAndPassword(usuario.Email,usuario.Senha)).ReturnsAsync(usuario);
     }
 }
