@@ -118,36 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CPF_CNPJ_ALREADY_REGISTERED" xml:space="preserve">
-    <value>CPF or CNPJ already registered.</value>
+    <value>CPF or CNPJ already registered</value>
   </data>
   <data name="CPF_CNPJ_EMPTY" xml:space="preserve">
-    <value>The CPF or CNPJ cannot be empty.</value>
+    <value>The CPF or CNPJ cannot be empty</value>
   </data>
   <data name="CPF_CNPJ_INVALID" xml:space="preserve">
-    <value>The CPF or CNPJ must contain only numbers, with 11 characters for CPF and 14 characters for CNPJ.</value>
+    <value>The CPF or CNPJ must contain only numbers, with 11 characters for CPF and 14 characters for CNPJ</value>
   </data>
   <data name="EMAIL_ALREADY_REGISTERED" xml:space="preserve">
-    <value>E-mail already registered.</value>
+    <value>E-mail already registered</value>
   </data>
   <data name="EMAIL_EMPTY" xml:space="preserve">
-    <value>Email cannot be empty.</value>
+    <value>Email cannot be empty</value>
   </data>
   <data name="EMAIL_INVALID" xml:space="preserve">
-    <value>Invalid email address.</value>
+    <value>Invalid email address</value>
   </data>
   <data name="NOME_EMPTY" xml:space="preserve">
-    <value>The name cannot be empty.</value>
+    <value>The name cannot be empty</value>
   </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
-    <value>The password must have more than 6 characters.</value>
+    <value>43 / 5.000
+Resultados de tradução
+Resultado da tradução
+The password must have at least 6 characters</value>
   </data>
   <data name="TELEPHONE_EMPTY" xml:space="preserve">
-    <value>phone cannot be empty.</value>
+    <value>phone cannot be empty</value>
   </data>
   <data name="TELEPHONE_INVALID" xml:space="preserve">
-    <value>Invalid phone send in format (XX)XXXXX-XXXX.</value>
+    <value>The phone number must only contain numbers in the format DDXXXXXXXXX</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
-    <value>Unknown error.</value>
+    <value>Unknown error</value>
   </data>
 </root>

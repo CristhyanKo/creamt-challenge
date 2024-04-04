@@ -61,6 +61,15 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CPF ou CNPJ já cadastrado.
+        /// </summary>
+        public static string CPF_CNPJ_ALREADY_REGISTERED {
+            get {
+                return ResourceManager.GetString("CPF_CNPJ_ALREADY_REGISTERED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O CPF ou CNPJ não pode estar vazio.
         /// </summary>
         public static string CPF_CNPJ_EMPTY {
@@ -70,11 +79,20 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O CPF ou CNPJ deve conter apenas números, com 11 caracteres para CPF e 14 caracteres para CNPJ..
+        ///   Looks up a localized string similar to O CPF ou CNPJ deve conter apenas números, com 11 caracteres para CPF e 14 caracteres para CNPJ.
         /// </summary>
         public static string CPF_CNPJ_INVALID {
             get {
                 return ResourceManager.GetString("CPF_CNPJ_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to email já cadastrado.
+        /// </summary>
+        public static string EMAIL_ALREADY_REGISTERED {
+            get {
+                return ResourceManager.GetString("EMAIL_ALREADY_REGISTERED", resourceCulture);
             }
         }
         
@@ -106,7 +124,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A senha deve possuir mais de 6 caracteres..
+        ///   Looks up a localized string similar to A senha deve possuir no minimo 6 caracteres.
         /// </summary>
         public static string PASSWORD_INVALID {
             get {
@@ -124,44 +142,20 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telefone inválido enviar no formato (XX)XXXXX-XXXX.
+        ///   Looks up a localized string similar to O número de telefone deve conter apenas números no formato  DDXXXXXXXXX.
         /// </summary>
         public static string TELEPHONE_INVALID {
             get {
                 return ResourceManager.GetString("TELEPHONE_INVALID", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string Erro desconhecido.
+        ///   Looks up a localized string similar to Erro desconhecido.
         /// </summary>
-        public static string UNKNOWN_ERROR
-        {
-            get
-            {
+        public static string UNKNOWN_ERROR {
+            get {
                 return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
-            }
-        }
-      
-        /// <summary>
-        ///   Looks up a localized string email já cadastrado..
-        /// </summary>
-        public static string EMAIL_ALREADY_REGISTERED
-        {
-            get
-            {
-                return ResourceManager.GetString("EMAIL_ALREADY_REGISTERED", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string CPF ou CNPJ já cadastrado.
-        /// </summary>
-        public static string CPF_CNPJ_ALREADY_REGISTERED
-        {
-            get
-            {
-                return ResourceManager.GetString("CPF_CNPJ_ALREADY_REGISTERED", resourceCulture);
             }
         }
     }
