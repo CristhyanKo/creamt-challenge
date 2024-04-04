@@ -4,9 +4,7 @@ using CreaMT.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CreaMT.API.Controllers;
-[Route("[controller]")]
-[ApiController]
-public class UsuarioController : ControllerBase
+public class UsuarioController : CreaMTBaseController
 {
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisteredUsuariosJson),StatusCodes.Status201Created)]
