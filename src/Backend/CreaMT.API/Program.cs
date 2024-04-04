@@ -4,12 +4,13 @@ using CreaMT.Application;
 using CreaMT.infrastructure;
 using CreaMT.infrastructure.Migrations;
 using CreaMT.infrastructure.Extension;
+using CreaMT.API.Converters;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new StringConverter()));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
