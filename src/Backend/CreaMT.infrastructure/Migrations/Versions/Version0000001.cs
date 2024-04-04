@@ -12,6 +12,7 @@ public class Versao0000001 : VersionBase
             .WithColumn("Email").AsString(255).NotNullable()
             .WithColumn("Telefone").AsString(11).NotNullable()
             .WithColumn("CpfCnpj").AsString(14).NotNullable()
-            .WithColumn("Senha").AsString(2000).NotNullable();
+            .WithColumn("Senha").AsString(2000).NotNullable()
+            .WithColumn("UsuarioIdentifier").AsGuid().NotNullable();
     }
 }

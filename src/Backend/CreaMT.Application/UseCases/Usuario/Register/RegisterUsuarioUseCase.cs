@@ -5,6 +5,7 @@ using CreaMT.Communication.Requests;
 using CreaMT.Communication.Responses;
 using CreaMT.Domain.Repositories;
 using CreaMT.Domain.Repositories.Usuario;
+using CreaMT.Domain.Security;
 using CreaMT.Exceptions;
 using CreaMT.Exceptions.ExceptionsBase;
 using FluentValidation;
@@ -15,20 +16,23 @@ public  class RegisterUsuarioUseCase : IRegisterUsuarioUseCase
     private readonly IUsuarioWriteOnlyRepository _writeOnlyRepository;
     private readonly IUsuarioReadOnlyRepository _readOnlyRepository;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IMapper _mapper; 
+    private readonly IAcessTokenGenerator _accessTokenService;
     private readonly PasswordEncripter _passwordEncripter;
-    private readonly IMapper _mapper;
 
     public RegisterUsuarioUseCase(IUsuarioWriteOnlyRepository writeOnlyRepository, 
         IUsuarioReadOnlyRepository readOnlyRepository,
         IUnitOfWork unitOfWork,
         IMapper mapper,
-        PasswordEncripter passwordEncripter)
+        PasswordEncripter passwordEncripter,
+        IAcessTokenGenerator accessTokenService)
     {
         _writeOnlyRepository = writeOnlyRepository;
         _readOnlyRepository = readOnlyRepository;
         _unitOfWork = unitOfWork;
         _passwordEncripter = passwordEncripter;
         _mapper = mapper;
+        _accessTokenService = accessTokenService;
 
     }
 
@@ -36,16 +40,22 @@ public  class RegisterUsuarioUseCase : IRegisterUsuarioUseCase
     {
         await Validate(request);
 
-        var Usuario = _mapper.Map<Domain.Entities.Usuario>(request);
+        var usuario = _mapper.Map<Domain.Entities.Usuario>(request);
 
-        Usuario.Senha = _passwordEncripter.Encrypt(request.Senha);
+        usuario.Senha = _passwordEncripter.Encrypt(request.Senha);
 
-        await _writeOnlyRepository.Add(Usuario);
+        usuario.UsuarioIdentifier = Guid.NewGuid();
+
+        await _writeOnlyRepository.Add(usuario);
 
         await _unitOfWork.Commit();
         return new ResponseRegisteredUsuariosJson
         {
-            Nome = Usuario.Nome,
+            Nome = usuario.Nome,
+            Tokens = new ResponseTokenJson
+            {
+                AccessToken = _accessTokenService.Generate(usuario.UsuarioIdentifier)
+            }
         };
     }
 
