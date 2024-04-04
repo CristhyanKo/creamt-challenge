@@ -3,5 +3,5 @@
 namespace CleaMT.CommonTestUtilities.Cryptography;
 public class PasswordEncripterBuilder
 {
-    public static PasswordEncripter Build() => new PasswordEncripter("abc1234");
+    public static PasswordEncripter Build() => new PasswordEncripter("12s3dv");
 }

@@ -10,19 +10,18 @@ using System.Text.Json;
 using Xunit;
 
 namespace CreaMT.WebApi.Test.Usuario.Register;
-public class RegisterUsuarioTest : IClassFixture<CustomWebApplicationFactory>
+public class RegisterUsuarioTest : CreaMTClassFixture
 {
-    private readonly HttpClient _httpClient;
     private readonly string _method = "usuario";
 
-    public RegisterUsuarioTest(CustomWebApplicationFactory factory) => _httpClient = factory.CreateClient();
+    public RegisterUsuarioTest(CustomWebApplicationFactory factory) : base(factory) { }
 
 
     [Fact]   
     public async Task Success()
     {
         var request = RequestRegisterUsuarioJsonBuilder.BuildUserCNPJ();
-        var response  = await _httpClient.PostAsJsonAsync(_method, request);
+        var response  = await DoPost(_method, request);
         response.StatusCode.Should().Be(HttpStatusCode.Created);
 
         await using var responseBody = await response.Content.ReadAsStreamAsync();
@@ -39,12 +38,7 @@ public class RegisterUsuarioTest : IClassFixture<CustomWebApplicationFactory>
         var request = RequestRegisterUsuarioJsonBuilder.BuildUserCNPJ();
         request.Nome = string.Empty;
 
-        if (_httpClient.DefaultRequestHeaders.Contains("Accept-Language"))
-            _httpClient.DefaultRequestHeaders.Remove("Accept-Language");
-
-        _httpClient.DefaultRequestHeaders.Add("Accept-Language", culture);
-
-        var response = await _httpClient.PostAsJsonAsync(_method, request);
+        var response = await DoPost(_method, request,culture);
         response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 
         await using var responseBody = await response.Content.ReadAsStreamAsync();
