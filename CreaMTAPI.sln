@@ -11,17 +11,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{9125
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{08AEFAD4-2477-4278-82BD-6758D9327462}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaMT.API", "src\Backend\CreaMT.API\CreaMT.API.csproj", "{17F3BEA0-71BB-401B-8C24-721F6C824DB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreaMT.API", "src\Backend\CreaMT.API\CreaMT.API.csproj", "{17F3BEA0-71BB-401B-8C24-721F6C824DB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaMT.Application", "src\Backend\CreaMT.Application\CreaMT.Application.csproj", "{19DC0941-E3E0-4438-8B45-3CEBA087898F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreaMT.Application", "src\Backend\CreaMT.Application\CreaMT.Application.csproj", "{19DC0941-E3E0-4438-8B45-3CEBA087898F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaMT.infrastructure", "src\Backend\CreaMT.infrastructure\CreaMT.infrastructure.csproj", "{4CDCA707-1808-4EF8-8451-320CEA02EB86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreaMT.infrastructure", "src\Backend\CreaMT.infrastructure\CreaMT.infrastructure.csproj", "{4CDCA707-1808-4EF8-8451-320CEA02EB86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaMT.Domain", "src\Backend\CreaMT.Domain\CreaMT.Domain.csproj", "{6E638D4A-0682-405D-B1A1-AF186FA4F412}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreaMT.Domain", "src\Backend\CreaMT.Domain\CreaMT.Domain.csproj", "{6E638D4A-0682-405D-B1A1-AF186FA4F412}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaMT.Communication", "src\Shared\CreaMT.Communication\CreaMT.Communication.csproj", "{9B42C44E-C194-4DC1-BC9F-13FE42EF58A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreaMT.Communication", "src\Shared\CreaMT.Communication\CreaMT.Communication.csproj", "{9B42C44E-C194-4DC1-BC9F-13FE42EF58A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaMT.Exceptions", "src\Shared\CreaMT.Exceptions\CreaMT.Exceptions.csproj", "{42DDD520-E882-4C1E-A00E-936C4D619A34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreaMT.Exceptions", "src\Shared\CreaMT.Exceptions\CreaMT.Exceptions.csproj", "{42DDD520-E882-4C1E-A00E-936C4D619A34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreaMT.Validators.Test", "tests\Validators.Test\CreaMT.Validators.Test.csproj", "{BD2AF0BC-15CC-4FB0-B72F-308B7B2B5AE5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleaMT.CommonTestUtilities", "tests\CommonTestUtilities\CleaMT.CommonTestUtilities.csproj", "{F6FACB35-6E66-4B67-AF46-D25DD851455F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaMT.UseCases.Test", "tests\CreaMT.UseCases.Test\CreaMT.UseCases.Test.csproj", "{D8703217-2785-4F5B-9632-BF630D1998FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaMT.WebApi.Test", "tests\CreaMT.WebApi.Test\CreaMT.WebApi.Test.csproj", "{FD65DD2E-D8A6-41E6-9F88-93BC630DFEAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +61,22 @@ Global
 		{42DDD520-E882-4C1E-A00E-936C4D619A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42DDD520-E882-4C1E-A00E-936C4D619A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42DDD520-E882-4C1E-A00E-936C4D619A34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD2AF0BC-15CC-4FB0-B72F-308B7B2B5AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD2AF0BC-15CC-4FB0-B72F-308B7B2B5AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD2AF0BC-15CC-4FB0-B72F-308B7B2B5AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD2AF0BC-15CC-4FB0-B72F-308B7B2B5AE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6FACB35-6E66-4B67-AF46-D25DD851455F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6FACB35-6E66-4B67-AF46-D25DD851455F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6FACB35-6E66-4B67-AF46-D25DD851455F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6FACB35-6E66-4B67-AF46-D25DD851455F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8703217-2785-4F5B-9632-BF630D1998FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8703217-2785-4F5B-9632-BF630D1998FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8703217-2785-4F5B-9632-BF630D1998FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8703217-2785-4F5B-9632-BF630D1998FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD65DD2E-D8A6-41E6-9F88-93BC630DFEAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD65DD2E-D8A6-41E6-9F88-93BC630DFEAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD65DD2E-D8A6-41E6-9F88-93BC630DFEAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD65DD2E-D8A6-41E6-9F88-93BC630DFEAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +90,10 @@ Global
 		{6E638D4A-0682-405D-B1A1-AF186FA4F412} = {91253720-C832-4601-9BD4-5A6CC1F1DFC5}
 		{9B42C44E-C194-4DC1-BC9F-13FE42EF58A4} = {08AEFAD4-2477-4278-82BD-6758D9327462}
 		{42DDD520-E882-4C1E-A00E-936C4D619A34} = {08AEFAD4-2477-4278-82BD-6758D9327462}
+		{BD2AF0BC-15CC-4FB0-B72F-308B7B2B5AE5} = {95ABAF3F-505A-4365-A039-C97E4D779808}
+		{F6FACB35-6E66-4B67-AF46-D25DD851455F} = {95ABAF3F-505A-4365-A039-C97E4D779808}
+		{D8703217-2785-4F5B-9632-BF630D1998FB} = {95ABAF3F-505A-4365-A039-C97E4D779808}
+		{FD65DD2E-D8A6-41E6-9F88-93BC630DFEAE} = {95ABAF3F-505A-4365-A039-C97E4D779808}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35E4333F-A7D4-476F-8682-ABC7CA0583B4}
