@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using CreaMT.Domain.Extensions;
+using System.Globalization;
 
 namespace CreaMT.API.Middleware;
 
@@ -11,15 +12,15 @@ public class CultureMiddleware
     }
     public async Task Invoke(HttpContext context)
     {   
-        var supportedCultures =CultureInfo.GetCultures(CultureTypes.AllCultures);
+        var supportedCultures =CultureInfo.GetCultures(CultureTypes.AllCultures).ToList();
 
         var requestedCulture = context.Request.Headers.AcceptLanguage.FirstOrDefault();
 
         var cultureInfo = new CultureInfo("pt");
-        if(string.IsNullOrWhiteSpace(requestedCulture) == false && 
-            supportedCultures.Any(c => c.Name.Equals(requestedCulture)))
+        if(requestedCulture.NotEmpty() && 
+            supportedCultures.Exists(c => c.Name.Equals(requestedCulture)))
         {
-            cultureInfo = new CultureInfo(requestedCulture);
+            cultureInfo = new CultureInfo(requestedCulture!);
         }
 
         CultureInfo.CurrentCulture = cultureInfo;
