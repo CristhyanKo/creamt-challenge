@@ -45,7 +45,7 @@ public  class RegisterUsuarioUseCase : IRegisterUsuarioUseCase
         await _unitOfWork.Commit();
         return new ResponseRegisteredUsuariosJson
         {
-            Nome = request.Nome,
+            Nome = Usuario.Nome,
         };
     }
 
