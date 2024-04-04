@@ -1,6 +1,8 @@
 ﻿using CreaMT.Application.Services.AutoMapper;
 using CreaMT.Application.Services.Cryptography;
+using CreaMT.Application.UseCases.Login.DoLogin;
 using CreaMT.Application.UseCases.Usuario.Register;
+using CreaMT.Communication.Requests;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 namespace CreaMT.Application;
@@ -26,6 +28,7 @@ public static class DependencyInjectionExtension
     private static void AddUseCases(IServiceCollection services)
     {
         services.AddScoped<IRegisterUsuarioUseCase, RegisterUsuarioUseCase>();
+        services.AddScoped<IDoLoginUseCase, DoLoginUseCase>();
     }
 
     private static void AddPasswordsEncrypter(IServiceCollection services, IConfiguration configuration)
