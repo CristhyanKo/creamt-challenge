@@ -2,6 +2,8 @@ using CreaMT.API.Filters;
 using CreaMT.API.Middleware;
 using CreaMT.Application;
 using CreaMT.infrastructure;
+using CreaMT.infrastructure.Migrations;
+using CreaMT.infrastructure.Extension;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,4 +34,18 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+MigrateDatabase();
 app.Run();
+
+void MigrateDatabase()
+{
+    if (builder.Configuration.IsUnitTestEnviroment())
+        return;
+    var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
+    DatabaseMigration.Migrat(builder.Configuration.GetConexaoCompleta(), serviceScope.ServiceProvider);
+}
+
+public partial class Program
+{
+    protected Program() { }
+}
