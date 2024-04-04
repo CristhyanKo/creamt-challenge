@@ -13,6 +13,7 @@ namespace CreaMT.WebApi.Test.Usuario.Register;
 public class RegisterUsuarioTest : IClassFixture<CustomWebApplicationFactory>
 {
     private readonly HttpClient _httpClient;
+    private readonly string _method = "usuario";
 
     public RegisterUsuarioTest(CustomWebApplicationFactory factory) => _httpClient = factory.CreateClient();
 
@@ -21,7 +22,7 @@ public class RegisterUsuarioTest : IClassFixture<CustomWebApplicationFactory>
     public async Task Success()
     {
         var request = RequestRegisterUsuarioJsonBuilder.BuildUserCNPJ();
-        var response  = await _httpClient.PostAsJsonAsync("Usuario", request);
+        var response  = await _httpClient.PostAsJsonAsync(_method, request);
         response.StatusCode.Should().Be(HttpStatusCode.Created);
 
         await using var responseBody = await response.Content.ReadAsStreamAsync();
@@ -43,7 +44,7 @@ public class RegisterUsuarioTest : IClassFixture<CustomWebApplicationFactory>
 
         _httpClient.DefaultRequestHeaders.Add("Accept-Language", culture);
 
-        var response = await _httpClient.PostAsJsonAsync("Usuario", request);
+        var response = await _httpClient.PostAsJsonAsync(_method, request);
         response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 
         await using var responseBody = await response.Content.ReadAsStreamAsync();
