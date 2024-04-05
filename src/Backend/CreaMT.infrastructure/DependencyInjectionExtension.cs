@@ -1,5 +1,6 @@
 ﻿using CreaMT.Domain.Repositories;
 using CreaMT.Domain.Repositories.Usuario;
+using CreaMT.Domain.Security.Cryptography;
 using CreaMT.Domain.Security.Tokens;
 using CreaMT.Domain.Services.LoggerUser;
 using CreaMT.infrastructure.DataAcess;
@@ -7,6 +8,7 @@ using CreaMT.infrastructure.DataAcess.Repositories;
 using CreaMT.infrastructure.Extension;
 using CreaMT.infrastructure.Security.Access.Generator;
 using CreaMT.infrastructure.Security.Access.Validator;
+using CreaMT.infrastructure.Security.Cryptography;
 using CreaMT.infrastructure.Services.LoggedUsuario;
 using FluentMigrator.Runner;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +21,7 @@ public static class DependencyInjectionExtension
 {
     public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
+        AddPasswordsEncrypter(services, configuration);
         AddRepositories(services);
         AddLoggedUsuario(services);
         AddTokens(services, configuration);
@@ -70,5 +73,11 @@ public static class DependencyInjectionExtension
     private static void AddLoggedUsuario(IServiceCollection services)
     {
         services.AddScoped<ILoggedUsuario, LoggedUsuario>();
+    }
+
+    private static void AddPasswordsEncrypter(IServiceCollection services, IConfiguration configuration)
+    {
+        var additionalKey = configuration.GetValue<string>("Settings:Password:AdditionalKey");
+        services.AddScoped<IPasswordEncripter>(option => new Sha512Encripter(additionalKey!));
     }
 }

@@ -1,14 +1,15 @@
-﻿using System.Security.Cryptography;
+﻿using CreaMT.Domain.Security.Cryptography;
+using System.Security.Cryptography;
 using System.Text;
 
-namespace CreaMT.Application.Services.Cryptography;
-public class PasswordEncripter
+namespace CreaMT.infrastructure.Security.Cryptography;
+public class Sha512Encripter : IPasswordEncripter
 {
     private readonly string _additionalKey;
-    public PasswordEncripter(string additionalkey) => _additionalKey = additionalkey;
-  
+    public Sha512Encripter(string additionalkey) => _additionalKey = additionalkey;
+
     public string Encrypt(string password)
-    { 
+    {
         var newPassword = $"{password}{_additionalKey}";
 
         var bytes = Encoding.UTF8.GetBytes(newPassword);

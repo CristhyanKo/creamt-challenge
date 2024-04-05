@@ -142,6 +142,24 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Valor da senha não pode ser vazio..
+        /// </summary>
+        public static string PASSSWORD_EMPTY {
+            get {
+                return ResourceManager.GetString("PASSSWORD_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Senha atual inválida..
+        /// </summary>
+        public static string PASSWORD_CURRENT_INVALID {
+            get {
+                return ResourceManager.GetString("PASSWORD_CURRENT_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A senha deve possuir no minimo 6 caracteres.
         /// </summary>
         public static string PASSWORD_INVALID {

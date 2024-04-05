@@ -1,7 +1,7 @@
-﻿using CreaMT.Application.Services.Cryptography;
-using CreaMT.Communication.Requests;
+﻿using CreaMT.Communication.Requests;
 using CreaMT.Communication.Responses;
 using CreaMT.Domain.Repositories.Usuario;
+using CreaMT.Domain.Security.Cryptography;
 using CreaMT.Domain.Security.Tokens;
 using CreaMT.Exceptions.ExceptionsBase;
 
@@ -11,10 +11,10 @@ public class DoLoginUseCase :IDoLoginUseCase
 {
     private readonly IUsuarioReadOnlyRepository _repository;
     private readonly IAcessTokenGenerator _accessTokenService;
-    private readonly PasswordEncripter _passwordEncripter;
+    private readonly IPasswordEncripter _passwordEncripter;
 
-    public DoLoginUseCase(IUsuarioReadOnlyRepository repository, 
-        PasswordEncripter passwordEncripter,
+    public DoLoginUseCase(IUsuarioReadOnlyRepository repository,
+        IPasswordEncripter passwordEncripter,
         IAcessTokenGenerator accessTokenService)
     {
         _repository = repository;

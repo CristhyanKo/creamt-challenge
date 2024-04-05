@@ -1,14 +1,12 @@
 ﻿using AutoMapper;
-using CreaMT.Application.Services.AutoMapper;
-using CreaMT.Application.Services.Cryptography;
 using CreaMT.Communication.Requests;
 using CreaMT.Communication.Responses;
 using CreaMT.Domain.Repositories;
 using CreaMT.Domain.Repositories.Usuario;
+using CreaMT.Domain.Security.Cryptography;
 using CreaMT.Domain.Security.Tokens;
 using CreaMT.Exceptions;
 using CreaMT.Exceptions.ExceptionsBase;
-using FluentValidation;
 
 namespace CreaMT.Application.UseCases.Usuario.Register;
 public  class RegisterUsuarioUseCase : IRegisterUsuarioUseCase
@@ -18,13 +16,13 @@ public  class RegisterUsuarioUseCase : IRegisterUsuarioUseCase
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper; 
     private readonly IAcessTokenGenerator _accessTokenService;
-    private readonly PasswordEncripter _passwordEncripter;
+    private readonly IPasswordEncripter _passwordEncripter;
 
     public RegisterUsuarioUseCase(IUsuarioWriteOnlyRepository writeOnlyRepository, 
         IUsuarioReadOnlyRepository readOnlyRepository,
         IUnitOfWork unitOfWork,
         IMapper mapper,
-        PasswordEncripter passwordEncripter,
+        IPasswordEncripter passwordEncripter,
         IAcessTokenGenerator accessTokenService)
     {
         _writeOnlyRepository = writeOnlyRepository;

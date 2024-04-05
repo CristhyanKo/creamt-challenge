@@ -144,6 +144,12 @@
   <data name="NO_TOKEN" xml:space="preserve">
     <value>Requisição não possui token de autorização.</value>
   </data>
+  <data name="PASSSWORD_EMPTY" xml:space="preserve">
+    <value>Valor da senha não pode ser vazio.</value>
+  </data>
+  <data name="PASSWORD_CURRENT_INVALID" xml:space="preserve">
+    <value>Senha atual inválida.</value>
+  </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>A senha deve possuir no minimo 6 caracteres</value>
   </data>

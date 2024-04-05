@@ -1,10 +1,9 @@
 ﻿using CreaMT.Application.Services.AutoMapper;
-using CreaMT.Application.Services.Cryptography;
 using CreaMT.Application.UseCases.Login.DoLogin;
 using CreaMT.Application.UseCases.Profile;
+using CreaMT.Application.UseCases.Usuario.ChangePassword;
 using CreaMT.Application.UseCases.Usuario.Register;
 using CreaMT.Application.UseCases.Usuario.Update;
-using CreaMT.Communication.Requests;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 namespace CreaMT.Application;
@@ -12,7 +11,6 @@ public static class DependencyInjectionExtension
 {
     public static void AddApplication(this IServiceCollection services, IConfiguration configuration)
     {
-        AddPasswordsEncrypter(services, configuration);
         AddAutoMapper(services);
         AddUseCases(services);
     }
@@ -33,11 +31,6 @@ public static class DependencyInjectionExtension
         services.AddScoped<IDoLoginUseCase, DoLoginUseCase>();
         services.AddScoped<IGetUsuarioProfileUseCase, GetUsuarioProfileUseCase>();
         services.AddScoped<IUsuarioUpdateUseCase, UpdateUsuarioUseCase>();
-    }
-
-    private static void AddPasswordsEncrypter(IServiceCollection services, IConfiguration configuration)
-    {
-        var additionalKey = configuration.GetValue<string>("Settings:Password:AdditionalKey");
-        services.AddScoped(option => new PasswordEncripter(additionalKey!));
+        services.AddScoped<IChangePasswordUseCase, ChangePasswordUseCase>();
     }
 }

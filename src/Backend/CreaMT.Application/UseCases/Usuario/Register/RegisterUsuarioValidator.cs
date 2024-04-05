@@ -1,4 +1,5 @@
-﻿using CreaMT.Communication.Requests;
+﻿using CreaMT.Application.SharedValidators;
+using CreaMT.Communication.Requests;
 using CreaMT.Domain.Entities;
 using CreaMT.Exceptions;
 using FluentValidation;
@@ -12,7 +13,7 @@ public class RegisterUsuarioValidator : AbstractValidator<RequestRegisterUsuario
         RuleFor(usuario => usuario.Email).NotEmpty().WithMessage(ResourceMessagesException.EMAIL_EMPTY);
         RuleFor(usuario => usuario.Telefone).NotEmpty().WithMessage(ResourceMessagesException.TELEPHONE_EMPTY);
         RuleFor(usuario => usuario.CpfCnpj).NotEmpty().WithMessage(ResourceMessagesException.CPF_CNPJ_EMPTY);
-        RuleFor(usuario => usuario.Senha.Length).GreaterThanOrEqualTo(6).WithMessage(ResourceMessagesException.PASSWORD_INVALID);
+        RuleFor(usuario => usuario.Senha).SetValidator(new PasswordValidator<RequestRegisterUsuarioJson>());
         When(usuario => string.IsNullOrEmpty(usuario.Email) == false, () =>
         {
             RuleFor(usuario => usuario.Email).EmailAddress().WithMessage(ResourceMessagesException.EMAIL_INVALID);

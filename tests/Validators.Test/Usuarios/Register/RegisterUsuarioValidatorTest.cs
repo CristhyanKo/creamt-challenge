@@ -158,4 +158,19 @@ public class RegisterUsuarioValidatorTest
         result.Errors.Should().ContainSingle()
             .And.Contain(e => e.ErrorMessage.Equals(ResourceMessagesException.PASSWORD_INVALID));
     }
+
+   [Fact]
+    public void Error_Senha_Empty()
+    {
+        var validator = new RegisterUsuarioValidator();
+
+        var request = RequestRegisterUsuarioJsonBuilder.BuildUserCPF();
+        request.Senha = string.Empty;
+
+        var result = validator.Validate(request);
+
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().ContainSingle()
+            .And.Contain(e => e.ErrorMessage.Equals(ResourceMessagesException.PASSSWORD_EMPTY));
+    }
 }

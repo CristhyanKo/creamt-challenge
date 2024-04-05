@@ -1,7 +1,8 @@
-﻿using CreaMT.Application.Services.Cryptography;
+﻿using CreaMT.Domain.Security.Cryptography;
+using CreaMT.infrastructure.Security.Cryptography;
 
 namespace CleaMT.CommonTestUtilities.Cryptography;
 public class PasswordEncripterBuilder
 {
-    public static PasswordEncripter Build() => new PasswordEncripter("12s3dv");
+    public static IPasswordEncripter Build() => new Sha512Encripter("12s3dv");
 }

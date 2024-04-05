@@ -144,6 +144,12 @@
   <data name="NO_TOKEN" xml:space="preserve">
     <value>Request does not have authorization token.</value>
   </data>
+  <data name="PASSSWORD_EMPTY" xml:space="preserve">
+    <value>Password value cannot be empty.</value>
+  </data>
+  <data name="PASSWORD_CURRENT_INVALID" xml:space="preserve">
+    <value>Invalid current password.</value>
+  </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>43 / 5.000
 Resultados de tradução
