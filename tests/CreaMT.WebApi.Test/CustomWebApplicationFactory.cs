@@ -42,6 +42,9 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     public string GetEmail() => _usuario.Email;
     public string GetPassword() => _password;
     public string GetName() => _usuario.Nome;
+    public string GetCpfCnpj() => _usuario.CpfCnpj;
+    public string GetPhone() => _usuario.Telefone;
+    public Guid GetUserIdentifier() => _usuario.UsuarioIdentifier;
     private void startDatabase(CreaMTAPIDbContext dbContext)
     {
         ( _usuario, _password) = UsuarioBuilder.Build();

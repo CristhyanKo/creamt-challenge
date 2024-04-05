@@ -23,7 +23,8 @@ public class UsuarioBuilder
             .RuleFor(x => x.Email, f => f.Internet.Email())
             .RuleFor(x => x.Senha, f => passwordEncripter.Encrypt(password))
             .RuleFor(x => x.CpfCnpj, f => f.Person.Cpf().RemoveMascara())
-            .RuleFor(x => x.Telefone, f => f.Phone.PhoneNumber("###########"));
+            .RuleFor(x => x.Telefone, f => f.Phone.PhoneNumber("###########"))
+            .RuleFor(x => x.UsuarioIdentifier, _ => Guid.NewGuid());
 
         return (usuario, password);
     }
