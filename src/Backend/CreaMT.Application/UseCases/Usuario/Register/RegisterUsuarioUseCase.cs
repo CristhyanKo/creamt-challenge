@@ -9,16 +9,16 @@ using CreaMT.Exceptions;
 using CreaMT.Exceptions.ExceptionsBase;
 
 namespace CreaMT.Application.UseCases.Usuario.Register;
-public  class RegisterUsuarioUseCase : IRegisterUsuarioUseCase
-{   
+public class RegisterUsuarioUseCase : IRegisterUsuarioUseCase
+{
     private readonly IUsuarioWriteOnlyRepository _writeOnlyRepository;
     private readonly IUsuarioReadOnlyRepository _readOnlyRepository;
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IMapper _mapper; 
+    private readonly IMapper _mapper;
     private readonly IAcessTokenGenerator _accessTokenService;
     private readonly IPasswordEncripter _passwordEncripter;
 
-    public RegisterUsuarioUseCase(IUsuarioWriteOnlyRepository writeOnlyRepository, 
+    public RegisterUsuarioUseCase(IUsuarioWriteOnlyRepository writeOnlyRepository,
         IUsuarioReadOnlyRepository readOnlyRepository,
         IUnitOfWork unitOfWork,
         IMapper mapper,
@@ -34,7 +34,7 @@ public  class RegisterUsuarioUseCase : IRegisterUsuarioUseCase
 
     }
 
-    public async Task<ResponseRegisteredUsuariosJson>  Execute(RequestRegisterUsuarioJson request)
+    public async Task<ResponseRegisteredUsuariosJson> Execute(RequestRegisterUsuarioJson request)
     {
         await Validate(request);
 
@@ -62,8 +62,8 @@ public  class RegisterUsuarioUseCase : IRegisterUsuarioUseCase
         var validator = new RegisterUsuarioValidator();
         var result = validator.Validate(request);
 
-       var emailExist = await _readOnlyRepository.ExistActiveUsuarioWithEmail(request.Email);
-       var cpfCnpjExist = await _readOnlyRepository.ExistActiveUsuarioWithCpfCnpj(request.CpfCnpj);
+        var emailExist = await _readOnlyRepository.ExistActiveUsuarioWithEmail(request.Email);
+        var cpfCnpjExist = await _readOnlyRepository.ExistActiveUsuarioWithCpfCnpj(request.CpfCnpj);
 
 
         if (emailExist)
@@ -77,7 +77,7 @@ public  class RegisterUsuarioUseCase : IRegisterUsuarioUseCase
         }
 
         if (result.IsValid == false)
-        {  
+        {
             var errorsMessage = result.Errors.Select(x => x.ErrorMessage).ToList();
             throw new ErrorOnValidationException(errorsMessage);
         }
