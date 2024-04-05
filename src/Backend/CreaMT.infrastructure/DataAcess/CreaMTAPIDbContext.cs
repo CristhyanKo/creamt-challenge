@@ -11,6 +11,7 @@ public class CreaMTAPIDbContext : DbContext
     public DbSet<Documento> Documentos { get; set; }
     public DbSet<Servico> Servicos { get; set; }
     public DbSet<SolicitacaoDocumento> SolicitacoesDocumentos { get; set; }
+    public DbSet<Solicitacao> Solicitacoes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
