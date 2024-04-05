@@ -124,7 +124,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não possui token de autorização..
+        ///   Looks up a localized string similar to Requisição não possui token de autorização..
         /// </summary>
         public static string NO_TOKEN {
             get {

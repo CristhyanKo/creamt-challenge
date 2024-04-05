@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CreaMT.Communication.Requests;
+using CreaMT.Communication.Responses;
 
 namespace CreaMT.Application.Services.AutoMapper;
 public class AutoMapping : Profile
@@ -7,6 +8,7 @@ public class AutoMapping : Profile
     public AutoMapping()
     {
         RequestToDomain();
+        DomainToResponse();
     }
     private void RequestToDomain()
     {
@@ -14,5 +16,10 @@ public class AutoMapping : Profile
             .ForMember(dest => dest.Senha, opt => opt.Ignore());
     }
 
-   
+    private void DomainToResponse()
+    {
+        CreateMap<Domain.Entities.Usuario, ResponseUserProfileJson>();
+    }
+
+
 }

@@ -1,11 +1,13 @@
 ﻿using CreaMT.Domain.Repositories;
 using CreaMT.Domain.Repositories.Usuario;
 using CreaMT.Domain.Security.Tokens;
+using CreaMT.Domain.Services.LoggerUser;
 using CreaMT.infrastructure.DataAcess;
 using CreaMT.infrastructure.DataAcess.Repositories;
 using CreaMT.infrastructure.Extension;
 using CreaMT.infrastructure.Security.Access.Generator;
 using CreaMT.infrastructure.Security.Access.Validator;
+using CreaMT.infrastructure.Services.LoggedUsuario;
 using FluentMigrator.Runner;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +20,9 @@ public static class DependencyInjectionExtension
     public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         AddRepositories(services);
+        AddLoggedUsuario(services);
         AddTokens(services, configuration);
+
         if (configuration.IsUnitTestEnviroment())
             return;
 
@@ -60,5 +64,10 @@ public static class DependencyInjectionExtension
 
         services.AddScoped<IAcessTokenGenerator>(option => new JwtTokenGenerator(expirationTimeMinutes, signingKey!));
         services.AddScoped<IAccessTokenValidator>(option => new JwtTokenValidator(signingKey!));
+    }
+
+    private static void AddLoggedUsuario(IServiceCollection services)
+    {
+        services.AddScoped<ILoggedUsuario, LoggedUsuario>();
     }
 }

@@ -142,7 +142,7 @@
     <value>The name cannot be empty</value>
   </data>
   <data name="NO_TOKEN" xml:space="preserve">
-    <value>It does not have an authorization token.</value>
+    <value>Request does not have authorization token.</value>
   </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>43 / 5.000
