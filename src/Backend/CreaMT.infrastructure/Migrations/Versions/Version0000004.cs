@@ -9,6 +9,7 @@ public class Version0000004 : VersionBase
     {
         CreateTable("Documentos")
             .WithColumn("Nome").AsString(100).NotNullable()
+            .WithColumn("Descricao").AsString(300).NotNullable()
             .WithColumn("EnderecoArquivo").AsString(300).NotNullable()
             .WithColumn("Downloads").AsInt32().NotNullable()
             .WithColumn("ServicoId").AsInt64().NotNullable().ForeignKey("FK_Documento_Servico_Id", "Servicos", "Id")
