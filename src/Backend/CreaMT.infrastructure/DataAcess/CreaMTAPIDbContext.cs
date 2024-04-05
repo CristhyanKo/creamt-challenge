@@ -9,6 +9,7 @@ public class CreaMTAPIDbContext : DbContext
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Cliente> Clientes { get; set; }
     public DbSet<Documento> Documentos { get; set; }
+    public DbSet<Servico> Servicos { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
