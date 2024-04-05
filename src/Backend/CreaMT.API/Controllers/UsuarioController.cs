@@ -1,6 +1,7 @@
 ﻿using CreaMT.API.Attributes;
 using CreaMT.Application.UseCases.Profile;
 using CreaMT.Application.UseCases.Usuario.Register;
+using CreaMT.Application.UseCases.Usuario.Update;
 using CreaMT.Communication.Requests;
 using CreaMT.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -26,5 +27,17 @@ public class UsuarioController : CreaMTBaseController
     {
         var resul = await useCase.Execute();
         return Ok( resul);
+    }
+
+    [HttpPut]
+    [ProducesResponseType(typeof(ResponseUserProfileJson), StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseUserProfileJson), StatusCodes.Status400BadRequest)]
+    [AuthenticatedUser]
+    public async Task<IActionResult> update(
+    [FromServices] IUsuarioUpdateUseCase useCase,
+    [FromBody] RequestUpdateUsuarioJson request)
+    {
+        await useCase.Execute(request);
+        return NoContent();
     }
 }

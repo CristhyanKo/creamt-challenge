@@ -3,6 +3,7 @@ using CreaMT.Application.Services.Cryptography;
 using CreaMT.Application.UseCases.Login.DoLogin;
 using CreaMT.Application.UseCases.Profile;
 using CreaMT.Application.UseCases.Usuario.Register;
+using CreaMT.Application.UseCases.Usuario.Update;
 using CreaMT.Communication.Requests;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +32,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IRegisterUsuarioUseCase, RegisterUsuarioUseCase>();
         services.AddScoped<IDoLoginUseCase, DoLoginUseCase>();
         services.AddScoped<IGetUsuarioProfileUseCase, GetUsuarioProfileUseCase>();
+        services.AddScoped<IUsuarioUpdateUseCase, UpdateUsuarioUseCase>();
     }
 
     private static void AddPasswordsEncrypter(IServiceCollection services, IConfiguration configuration)
