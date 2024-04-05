@@ -1,5 +1,6 @@
 ﻿using CreaMT.Domain.Repositories;
 using CreaMT.Domain.Repositories.Cliente;
+using CreaMT.Domain.Repositories.Documento;
 using CreaMT.Domain.Repositories.Usuario;
 using CreaMT.Domain.Security.Cryptography;
 using CreaMT.Domain.Security.Tokens;
@@ -49,6 +50,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IUsuarioWriteOnlyRepository, UsuarioRepository>();
         services.AddScoped<IUsuarioUpdateOnlyRepository, UsuarioRepository>();
         services.AddScoped<IClienteWriteOnlyRepository, ClienteRepository>();
+        services.AddScoped<IDocumentoWriteOnlyRepository, DocumentoRepository>();
     }
 
     private static void AddFluentMigrator(IServiceCollection services, IConfiguration configuration)
