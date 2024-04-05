@@ -1,9 +1,11 @@
-﻿using CreaMT.Application.UseCases.Login.DoLogin;
+﻿using CreaMT.API.Attributes;
+using CreaMT.Application.UseCases.Login.DoLogin;
 using CreaMT.Communication.Requests;
 using CreaMT.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CreaMT.API.Controllers;
+[AuthenticatedUser]
 public class LoginController : CreaMTBaseController
 {
     [HttpPost]

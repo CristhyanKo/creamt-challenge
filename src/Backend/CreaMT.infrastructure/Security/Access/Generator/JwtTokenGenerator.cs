@@ -1,11 +1,11 @@
-﻿using CreaMT.Domain.Security;
+﻿using CreaMT.Domain.Security.Tokens;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
 namespace CreaMT.infrastructure.Security.Access.Generator;
-public class JwtTokenGenerator : IAcessTokenGenerator
+public class JwtTokenGenerator : JwtTokenHandler, IAcessTokenGenerator
 {
     private readonly uint _expirationTimeMinutes;
     private readonly string _signinkey;
@@ -33,11 +33,4 @@ public class JwtTokenGenerator : IAcessTokenGenerator
         var securityToken = tokenHandler.CreateToken(tokenDescriptor);
         return tokenHandler.WriteToken(securityToken);
     }
-
-    private SymmetricSecurityKey SecurityKey(string signinkey)
-    {
-        var bytes = Encoding.UTF8.GetBytes(signinkey);
-        return new SymmetricSecurityKey(bytes);
-    }
-   
 }

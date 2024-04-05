@@ -1,10 +1,11 @@
 ﻿using CreaMT.Domain.Repositories;
 using CreaMT.Domain.Repositories.Usuario;
-using CreaMT.Domain.Security;
+using CreaMT.Domain.Security.Tokens;
 using CreaMT.infrastructure.DataAcess;
 using CreaMT.infrastructure.DataAcess.Repositories;
 using CreaMT.infrastructure.Extension;
 using CreaMT.infrastructure.Security.Access.Generator;
+using CreaMT.infrastructure.Security.Access.Validator;
 using FluentMigrator.Runner;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -58,5 +59,6 @@ public static class DependencyInjectionExtension
         var signingKey = configuration.GetValue<string>("Settings:Jwt:signingKey");
 
         services.AddScoped<IAcessTokenGenerator>(option => new JwtTokenGenerator(expirationTimeMinutes, signingKey!));
+        services.AddScoped<IAccessTokenValidator>(option => new JwtTokenValidator(signingKey!));
     }
 }

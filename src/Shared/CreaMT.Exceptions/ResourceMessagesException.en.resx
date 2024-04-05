@@ -141,6 +141,9 @@
   <data name="NOME_EMPTY" xml:space="preserve">
     <value>The name cannot be empty</value>
   </data>
+  <data name="NO_TOKEN" xml:space="preserve">
+    <value>It does not have an authorization token.</value>
+  </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>43 / 5.000
 Resultados de tradução
@@ -153,7 +156,13 @@ The password must have at least 6 characters</value>
   <data name="TELEPHONE_INVALID" xml:space="preserve">
     <value>The phone number must only contain numbers in the format DDXXXXXXXXX</value>
   </data>
+  <data name="TOKEN_EXPIRED" xml:space="preserve">
+    <value>Expired token.</value>
+  </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
     <value>Unknown error</value>
+  </data>
+  <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" xml:space="preserve">
+    <value>User does not have permission to access this resource.</value>
   </data>
 </root>

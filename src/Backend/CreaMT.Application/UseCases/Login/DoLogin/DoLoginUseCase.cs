@@ -2,11 +2,11 @@
 using CreaMT.Communication.Requests;
 using CreaMT.Communication.Responses;
 using CreaMT.Domain.Repositories.Usuario;
-using CreaMT.Domain.Security;
+using CreaMT.Domain.Security.Tokens;
 using CreaMT.Exceptions.ExceptionsBase;
 
 namespace CreaMT.Application.UseCases.Login.DoLogin;
-  
+
 public class DoLoginUseCase :IDoLoginUseCase
 {
     private readonly IUsuarioReadOnlyRepository _repository;

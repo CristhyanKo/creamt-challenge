@@ -1,4 +1,4 @@
-﻿using CreaMT.Domain.Security;
+﻿using CreaMT.Domain.Security.Tokens;
 using CreaMT.infrastructure.Security.Access.Generator;
 
 namespace CleaMT.CommonTestUtilities.Tokens;

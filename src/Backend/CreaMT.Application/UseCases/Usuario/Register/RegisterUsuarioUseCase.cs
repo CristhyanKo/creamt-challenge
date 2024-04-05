@@ -5,7 +5,7 @@ using CreaMT.Communication.Requests;
 using CreaMT.Communication.Responses;
 using CreaMT.Domain.Repositories;
 using CreaMT.Domain.Repositories.Usuario;
-using CreaMT.Domain.Security;
+using CreaMT.Domain.Security.Tokens;
 using CreaMT.Exceptions;
 using CreaMT.Exceptions.ExceptionsBase;
 using FluentValidation;

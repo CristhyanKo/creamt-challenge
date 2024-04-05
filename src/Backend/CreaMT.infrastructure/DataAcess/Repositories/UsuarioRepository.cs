@@ -20,6 +20,10 @@ public class UsuarioRepository : IUsuarioReadOnlyRepository, IUsuarioWriteOnlyRe
     {
         return await _dbContext.Usuarios.AnyAsync(usuario => usuario.CpfCnpj == CpfCnpj && usuario.Ativo && usuario.Excluido == false);
     }
+    public async Task<bool> ExistActiveUsuarioWithIdentifier(Guid UsuarioIdentifier)
+    {
+        return await _dbContext.Usuarios.AnyAsync(usuario => usuario.UsuarioIdentifier.Equals(UsuarioIdentifier) && usuario.Ativo && usuario.Excluido == false);
+    }
 
     public async Task<Usuario?> GetByEmailAndPassword(string email, string password)
     {
