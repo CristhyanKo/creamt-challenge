@@ -4,7 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
+
+    <InvariantGlobalization>false</InvariantGlobalization>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,13 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
 
-  <ItemGroup>
     <ProjectReference Include="..\..\Shared\CreaMT.Communication\CreaMT.Communication.csproj" />
     <ProjectReference Include="..\..\Shared\CreaMT.Exceptions\CreaMT.Exceptions.csproj" />
     <ProjectReference Include="..\CreaMT.Application\CreaMT.Application.csproj" />
+    <ProjectReference Include="..\CreaMT.infrastructure\CreaMT.infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
