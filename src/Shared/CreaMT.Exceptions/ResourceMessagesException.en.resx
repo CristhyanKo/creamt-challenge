@@ -118,28 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CPF_CNPJ_ALREADY_REGISTERED" xml:space="preserve">
-    <value>CPF or CNPJ already registered</value>
+    <value>CPF or CNPJ already registered.</value>
   </data>
   <data name="CPF_CNPJ_EMPTY" xml:space="preserve">
-    <value>The CPF or CNPJ cannot be empty</value>
+    <value>The CPF or CNPJ cannot be empty.</value>
   </data>
   <data name="CPF_CNPJ_INVALID" xml:space="preserve">
-    <value>The CPF or CNPJ must contain only numbers, with 11 characters for CPF and 14 characters for CNPJ</value>
+    <value>The CPF or CNPJ must contain only numbers, with 11 characters for CPF and 14 characters for CNPJ.</value>
   </data>
   <data name="EMAIL_ALREADY_REGISTERED" xml:space="preserve">
-    <value>E-mail already registered</value>
+    <value>E-mail already registered.</value>
   </data>
   <data name="EMAIL_EMPTY" xml:space="preserve">
-    <value>Email cannot be empty</value>
+    <value>Email cannot be empty.</value>
   </data>
   <data name="EMAIL_INVALID" xml:space="preserve">
-    <value>Invalid email address</value>
+    <value>Invalid email address.</value>
   </data>
   <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
-    <value>Invalid email and/or password</value>
+    <value>Invalid email and/or password.</value>
   </data>
   <data name="NOME_EMPTY" xml:space="preserve">
-    <value>The name cannot be empty</value>
+    <value>The name cannot be empty.</value>
   </data>
   <data name="NO_TOKEN" xml:space="preserve">
     <value>Request does not have authorization token.</value>
@@ -151,24 +151,27 @@
     <value>Invalid current password.</value>
   </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
-    <value>43 / 5.000
-Resultados de tradução
-Resultado da tradução
-The password must have at least 6 characters</value>
+    <value>The password must have at least 6 characters.</value>
   </data>
   <data name="TELEPHONE_EMPTY" xml:space="preserve">
-    <value>phone cannot be empty</value>
+    <value>phone cannot be empty.</value>
   </data>
   <data name="TELEPHONE_INVALID" xml:space="preserve">
-    <value>The phone number must only contain numbers in the format DDXXXXXXXXX</value>
+    <value>The phone number must only contain numbers in the format DDXXXXXXXXX.</value>
   </data>
   <data name="TOKEN_EXPIRED" xml:space="preserve">
     <value>Expired token.</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
-    <value>Unknown error</value>
+    <value>Unknown error.</value>
+  </data>
+  <data name="USER_NOT_FOUND" xml:space="preserve">
+    <value>User not found.</value>
   </data>
   <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" xml:space="preserve">
     <value>User does not have permission to access this resource.</value>
+  </data>
+  <data name="USUARIO_ID_INVALID" xml:space="preserve">
+    <value>Invalid ID.</value>
   </data>
 </root>

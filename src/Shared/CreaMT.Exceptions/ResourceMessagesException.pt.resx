@@ -118,28 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CPF_CNPJ_ALREADY_REGISTERED" xml:space="preserve">
-    <value>CPF ou CNPJ já cadastrado</value>
+    <value>CPF ou CNPJ já cadastrado.</value>
   </data>
   <data name="CPF_CNPJ_EMPTY" xml:space="preserve">
-    <value>O CPF ou CNPJ não pode estar vazio</value>
+    <value>O CPF ou CNPJ não pode estar vazio.</value>
   </data>
   <data name="CPF_CNPJ_INVALID" xml:space="preserve">
-    <value>O CPF ou CNPJ deve conter apenas números, com 11 caracteres para CPF e 14 caracteres para CNPJ</value>
+    <value>O CPF ou CNPJ deve conter apenas números, com 11 caracteres para CPF e 14 caracteres para CNPJ.</value>
   </data>
   <data name="EMAIL_ALREADY_REGISTERED" xml:space="preserve">
-    <value>email já cadastrado</value>
+    <value>email já cadastrado.</value>
   </data>
   <data name="EMAIL_EMPTY" xml:space="preserve">
-    <value>O email não pode estar vazio</value>
+    <value>O email não pode estar vazio.</value>
   </data>
   <data name="EMAIL_INVALID" xml:space="preserve">
-    <value>Endereço de email inválido</value>
+    <value>Endereço de email inválido.</value>
   </data>
   <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
-    <value>E-mail e/ ou senha inválidos</value>
+    <value>E-mail e/ ou senha inválidos.</value>
   </data>
   <data name="NOME_EMPTY" xml:space="preserve">
-    <value>O nome não pode estar vazio</value>
+    <value>O nome não pode estar vazio.</value>
   </data>
   <data name="NO_TOKEN" xml:space="preserve">
     <value>Requisição não possui token de autorização.</value>
@@ -151,21 +151,27 @@
     <value>Senha atual inválida.</value>
   </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
-    <value>A senha deve possuir no minimo 6 caracteres</value>
+    <value>A senha deve possuir no minimo 6 caracteres.</value>
   </data>
   <data name="TELEPHONE_EMPTY" xml:space="preserve">
-    <value>telefone não pode estar vazio</value>
+    <value>telefone não pode estar vazio.</value>
   </data>
   <data name="TELEPHONE_INVALID" xml:space="preserve">
-    <value>O número de telefone deve conter apenas números no formato  DDXXXXXXXXX</value>
+    <value>O número de telefone deve conter apenas números no formato  DDXXXXXXXXX.</value>
   </data>
   <data name="TOKEN_EXPIRED" xml:space="preserve">
     <value>Token expirado.</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
-    <value>Erro desconhecido</value>
+    <value>Erro desconhecido.</value>
+  </data>
+  <data name="USER_NOT_FOUND" xml:space="preserve">
+    <value>Usuário não encontrado.</value>
   </data>
   <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" xml:space="preserve">
     <value>Usuário não tem permissão para acessar esse recurso.</value>
+  </data>
+  <data name="USUARIO_ID_INVALID" xml:space="preserve">
+    <value>ID inválido.</value>
   </data>
 </root>

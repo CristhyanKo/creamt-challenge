@@ -61,7 +61,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CPF ou CNPJ já cadastrado.
+        ///   Looks up a localized string similar to CPF ou CNPJ já cadastrado..
         /// </summary>
         public static string CPF_CNPJ_ALREADY_REGISTERED {
             get {
@@ -70,7 +70,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O CPF ou CNPJ não pode estar vazio.
+        ///   Looks up a localized string similar to O CPF ou CNPJ não pode estar vazio..
         /// </summary>
         public static string CPF_CNPJ_EMPTY {
             get {
@@ -79,7 +79,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O CPF ou CNPJ deve conter apenas números, com 11 caracteres para CPF e 14 caracteres para CNPJ.
+        ///   Looks up a localized string similar to O CPF ou CNPJ deve conter apenas números, com 11 caracteres para CPF e 14 caracteres para CNPJ..
         /// </summary>
         public static string CPF_CNPJ_INVALID {
             get {
@@ -88,7 +88,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to email já cadastrado.
+        ///   Looks up a localized string similar to email já cadastrado..
         /// </summary>
         public static string EMAIL_ALREADY_REGISTERED {
             get {
@@ -97,7 +97,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O email não pode estar vazio.
+        ///   Looks up a localized string similar to O email não pode estar vazio..
         /// </summary>
         public static string EMAIL_EMPTY {
             get {
@@ -106,7 +106,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Endereço de email inválido.
+        ///   Looks up a localized string similar to Endereço de email inválido..
         /// </summary>
         public static string EMAIL_INVALID {
             get {
@@ -115,7 +115,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-mail e/ ou senha inválidos.
+        ///   Looks up a localized string similar to E-mail e/ ou senha inválidos..
         /// </summary>
         public static string EMAIL_OR_PASSWORD_INVALID {
             get {
@@ -133,7 +133,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O nome não pode estar vazio.
+        ///   Looks up a localized string similar to O nome não pode estar vazio..
         /// </summary>
         public static string NOME_EMPTY {
             get {
@@ -160,7 +160,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A senha deve possuir no minimo 6 caracteres.
+        ///   Looks up a localized string similar to A senha deve possuir no minimo 6 caracteres..
         /// </summary>
         public static string PASSWORD_INVALID {
             get {
@@ -169,7 +169,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to telefone não pode estar vazio.
+        ///   Looks up a localized string similar to telefone não pode estar vazio..
         /// </summary>
         public static string TELEPHONE_EMPTY {
             get {
@@ -178,7 +178,7 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O número de telefone deve conter apenas números no formato  DDXXXXXXXXX.
+        ///   Looks up a localized string similar to O número de telefone deve conter apenas números no formato  DDXXXXXXXXX..
         /// </summary>
         public static string TELEPHONE_INVALID {
             get {
@@ -196,11 +196,20 @@ namespace CreaMT.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro desconhecido.
+        ///   Looks up a localized string similar to Erro desconhecido..
         /// </summary>
         public static string UNKNOWN_ERROR {
             get {
                 return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuário não encontrado..
+        /// </summary>
+        public static string USER_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("USER_NOT_FOUND", resourceCulture);
             }
         }
         
@@ -210,6 +219,15 @@ namespace CreaMT.Exceptions {
         public static string USER_WITHOUT_PERMISSION_ACCESS_RESOURCE {
             get {
                 return ResourceManager.GetString("USER_WITHOUT_PERMISSION_ACCESS_RESOURCE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID inválido..
+        /// </summary>
+        public static string USUARIO_ID_INVALID {
+            get {
+                return ResourceManager.GetString("USUARIO_ID_INVALID", resourceCulture);
             }
         }
     }
