@@ -1,3 +1,4 @@
+
 using CreaMT.API.Filters;
 using CreaMT.API.Middleware;
 using CreaMT.Application;
@@ -8,10 +9,10 @@ using CreaMT.API.Converters;
 using Microsoft.OpenApi.Models;
 using CreaMT.Domain.Security.Tokens;
 using CreaMT.API.Token;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 
 builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new StringConverter()));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -20,8 +21,8 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = @"Cabeçalho de autorização JWT usando o esquema Bearer.
-                        Digite 'Bearer' [espaço] e depois seu token na entrada de texto abaixo
+        Description = @"Cabeï¿½alho de autorizaï¿½ï¿½o JWT usando o esquema Bearer.
+                        Digite 'Bearer' [espaï¿½o] e depois seu token na entrada de texto abaixo
                         Exemplo: 'Bearer 1234abcdef'",
         Name = "Authorization",
         In = ParameterLocation.Header,
@@ -65,13 +66,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.UseMiddleware<CultureMiddleware>();
+
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 MigrateDatabase();
 app.Run();
@@ -88,3 +92,4 @@ public partial class Program
 {
     protected Program() { }
 }
+

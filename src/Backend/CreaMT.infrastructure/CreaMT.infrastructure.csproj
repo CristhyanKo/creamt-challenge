@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+
     <PackageReference Include="Bogus" Version="35.5.0" />
     <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="FluentMigrator" Version="5.2.0" />
@@ -19,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+
     <ProjectReference Include="..\CreaMT.Domain\CreaMT.Domain.csproj" />
   </ItemGroup>
 

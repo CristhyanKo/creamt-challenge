@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+
   <ItemGroup>
     <Compile Update="ResourceMessagesException.Designer.cs">
       <DesignTime>True</DesignTime>
