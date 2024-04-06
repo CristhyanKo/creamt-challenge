@@ -1,11 +1,14 @@
 ﻿using CreaMT.API.Attributes;
 using CreaMT.Application.UseCases.Profile;
 using CreaMT.Application.UseCases.Usuario.ChangePassword;
+using CreaMT.Application.UseCases.Usuario.Delete;
+using CreaMT.Application.UseCases.Usuario.Get;
 using CreaMT.Application.UseCases.Usuario.Register;
 using CreaMT.Application.UseCases.Usuario.Update;
 using CreaMT.Communication.Requests;
 using CreaMT.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace CreaMT.API.Controllers;
 public class UsuarioController : CreaMTBaseController
@@ -51,6 +54,32 @@ public class UsuarioController : CreaMTBaseController
   [FromBody] RequestChangePasswordJson request)
     {
         await useCase.Execute(request);
+        return NoContent();
+    }
+
+    [HttpGet("list-user")]
+    [ProducesResponseType(typeof(ResponseListUserJson),StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status204NoContent)]
+    [AuthenticatedUser]
+    public async Task<IActionResult> ChangePassword(
+  [FromServices] IGetAllUsuariosUserCase useCase)
+    {
+        var resposta = await useCase.Execute();
+        if (resposta.Usuarios.Any())
+            return Ok(resposta);
+
+        return NoContent();
+    }
+    
+    [HttpDelete]
+    [Route("{id}")]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status204NoContent)]
+    [AuthenticatedUser]
+    public async Task<IActionResult> Delete(
+    [FromServices] IDeleteUsuarioUseCase useCase,
+    [FromRoute] long id)
+    {
+        await useCase.Execute(id);
         return NoContent();
     }
 }

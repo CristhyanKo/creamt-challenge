@@ -7,4 +7,5 @@ public interface IUsuarioReadOnlyRepository
 
     public Task<Entities.Usuario?> GetByEmailAndPassword(string email, string password);
 
+    public Task<IList<Entities.Usuario>> GetAll();
 }

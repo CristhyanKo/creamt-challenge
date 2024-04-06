@@ -2,6 +2,8 @@
 using CreaMT.Application.UseCases.Login.DoLogin;
 using CreaMT.Application.UseCases.Profile;
 using CreaMT.Application.UseCases.Usuario.ChangePassword;
+using CreaMT.Application.UseCases.Usuario.Delete;
+using CreaMT.Application.UseCases.Usuario.Get;
 using CreaMT.Application.UseCases.Usuario.Register;
 using CreaMT.Application.UseCases.Usuario.Update;
 using Microsoft.Extensions.Configuration;
@@ -32,5 +34,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetUsuarioProfileUseCase, GetUsuarioProfileUseCase>();
         services.AddScoped<IUsuarioUpdateUseCase, UpdateUsuarioUseCase>();
         services.AddScoped<IChangePasswordUseCase, ChangePasswordUseCase>();
+        services.AddScoped<IGetAllUsuariosUserCase, GetAllUsuariosUserCase>();
+        services.AddScoped<IDeleteUsuarioUseCase, DeleteUsuarioUseCase>();
     }
 }
