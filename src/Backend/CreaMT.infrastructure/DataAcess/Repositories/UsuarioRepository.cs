@@ -41,4 +41,19 @@ public class UsuarioRepository : IUsuarioReadOnlyRepository, IUsuarioWriteOnlyRe
     }
 
     public void Update(Usuario usuario) => _dbContext.Usuarios.Update(usuario);
+
+    public async Task<IList<Usuario>> GetAll()
+    {
+        return await _dbContext
+             .Usuarios
+             .AsNoTracking()
+             .ToListAsync();
+    }
+
+    public async Task Delete(long usuarioId)
+    {
+        var usuario = await GetById(usuarioId);
+        usuario.Excluido = true;
+        _dbContext.Update(usuario);
+    }
 }
